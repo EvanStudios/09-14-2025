@@ -4,11 +4,27 @@
     .github-copyright-banner, .github-copyright-banner a { display: none !important; }
     body { margin: 0; padding: 0; background: white; font-family: sans-serif; }
     
-    <audio src=Song.mp3 loop controls autoplay></audio> 
+    /* Safe top zone for the player */
+    .player-container {
+      width: 100%;
+      padding: 40px 0 20px 0;
+      text-align: center;
+      background: white;
+      position: relative;
+      z-index: 10;
+    }
+    
+    audio {
+      width: 180px;
+      height: 54px;
+      border-radius: 27px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
     
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      display: block;
     }
     
     h1 {
@@ -28,12 +44,12 @@
 </head>
 <body>
 
-  <!-- PLAYER: Big, centered, fully visible on iPhone -->
+  <!-- PLAYER: Full width container, centered button, lots of padding -->
   <div class="player-container">
     <audio src=Song.mp3 loop controls autoplay></audio>
   </div>
 
-  <!-- CONTENT: Everything else unchanged -->
+  <!-- CONTENT: Starts after player, no overlap -->
   <img src=Pic1.HEIC>
   <h1>Dear Abby,</h1>
   <p>Thank you for choosing me to be the lucky recipient of your kindness, grace, and purity.</p>
